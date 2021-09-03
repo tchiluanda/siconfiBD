@@ -7,6 +7,6 @@
 #' @export
 
 
-set_billing_id <- function(project_id){
+set_billing_id <- function(project_id=NULL){
   basedosdados::set_billing_id(project_id)
 }

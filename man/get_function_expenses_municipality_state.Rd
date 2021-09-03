@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_function_expenses_municipality_state.R
 \name{get_function_expenses_municipality_state}
 \alias{get_function_expenses_municipality_state}
-\title{Get government functions for municipalities}
+\title{Get government functions for municipalities of a given state vector}
 \usage{
 get_function_expenses_municipality_state(
   year = 2019,
@@ -25,4 +25,7 @@ A tibble with data about expanses on functions governments
 }
 \description{
 This function retrieves values of govenrment functions for given municipalities.
+}
+\examples{
+get_function_expenses_municipality_state(year=2019, state = "AP", gov_function = "SaÃºde", expense_stage= "Despesas Pagas")
 }

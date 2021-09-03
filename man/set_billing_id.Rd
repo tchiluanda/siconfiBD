@@ -4,7 +4,7 @@
 \alias{set_billing_id}
 \title{Define your Project Id}
 \usage{
-set_billing_id(project_id)
+set_billing_id(project_id = NULL)
 }
 \arguments{
 \item{project_id}{a single character value containing the string. Vectors with longer lengths and non-vectors will trigger an error.}
@@ -14,4 +14,7 @@ No return
 }
 \description{
 Define your project billing ids here so all your queries are authenticated and return data, not errors. If using in production or leaving code available at public repositories, dotenv is highly recommended.
+}
+\examples{
+set_billing_id(<your_project_id>)
 }

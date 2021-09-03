@@ -6,7 +6,9 @@ output: github_document
 
 ```{r, include = FALSE}
 library(siconfiBD)
- 
+library(readr)
+projeto <- read_csv("projeto.csv")
+set_billing_id(projeto$projeto) 
 
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -37,8 +39,8 @@ This is a basic example which shows you how to get government functions for muni
 
 ```{r example}
 library(siconfiBD)
-## First you need to set the project
-
+## You need a Google Cloud Project and then set this project using the funcion below just before use the
+## functions to retrieve data
 #set_billing_id(<your_project_id>) 
 
 

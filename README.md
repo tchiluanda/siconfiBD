@@ -27,8 +27,8 @@ for municipalities of a given state vector:
 
 ``` r
 library(siconfiBD)
-## First you need to set the project
-
+## You need a Google Cloud Project and then set this project using the funcion below just before use the
+## functions to retrieve data
 #set_billing_id(<your_project_id>) 
 
 

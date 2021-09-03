@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_budgetary_revenues_municipality.R
 \name{get_budgetary_revenues_municipality}
 \alias{get_budgetary_revenues_municipality}
-\title{Get government functions for municipalities}
+\title{Get budgetary revenues for municipalities}
 \usage{
 get_budgetary_revenues_municipality(
   year = 2019,
@@ -11,15 +11,15 @@ get_budgetary_revenues_municipality(
 )
 }
 \arguments{
-\item{year}{number indicating the year or reference}
+\item{year}{vector indicating the reference years}
+
+\item{municipality}{vector with IBGE ids for municipalities}
 
 \item{account}{vector with account names}
-
-\item{expense_stage}{vctor with expense stages c("Despesas Empenhadas", "Despesas Liquidadas","Despesas Pagas")}
 }
 \value{
-A tibble with data about budgetary expenses
+A tibble with data about budgetary revenues
 }
 \description{
-This function retrieves values of govenrment functions for given municipalities.
+This function retrieves values of government functions for given municipalities.
 }

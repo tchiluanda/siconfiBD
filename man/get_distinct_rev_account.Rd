@@ -15,3 +15,6 @@ A vector with expense accounts
 \description{
 This function retrieves a set of budgetary expense accounts.
 }
+\examples{
+get_distinct_rev_account()
+}

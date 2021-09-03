@@ -20,3 +20,6 @@ Notice that the functions are distinct.
 Users may get all the functions and sub-functions, just the subset of functions
 as well as just the subset of sub-functions
 }
+\examples{
+get_distinct_function()
+}

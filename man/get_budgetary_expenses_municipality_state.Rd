@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_budgetary_expenses_municipality_state.R
 \name{get_budgetary_expenses_municipality_state}
 \alias{get_budgetary_expenses_municipality_state}
-\title{Get government functions for municipalities}
+\title{Get government budget expenses for municipalities}
 \usage{
 get_budgetary_expenses_municipality_state(
   year = 2019,
@@ -24,5 +24,8 @@ get_budgetary_expenses_municipality_state(
 A tibble with data about budgetary expenses
 }
 \description{
-This function retrieves values of govenrment functions for given municipalities.
+This function retrieves values of budget expenses for given municipalities.
+}
+\examples{
+get_budgetary_expenses_municipality_state(year = 2019,state = "AP", account = "Pessoal e Encargos Sociais", expense_stage="Despesas Pagas")
 }
