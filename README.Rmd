@@ -1,0 +1,66 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+library(siconfiBD)
+ 
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# siconfiBD
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of siconfiBD is to get public financial data from Brazillian municipalities
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("tchiluanda/siconfiBD")
+```
+## Example
+
+This is a basic example which shows you how to get government functions for municipalities of a given state vector:
+
+```{r example}
+library(siconfiBD)
+## First you need to set the project
+
+#set_billing_id(<your_project_id>) 
+
+
+exp_mun_state<- get_function_expenses_municipality_state(year=2019, state = "AP", gov_function = "Saúde", expense_stage= "Despesas Pagas")
+
+head(exp_mun_state)
+```
+
+or maybe you want the data for some expense account of a given municipality.
+
+```{r example2}
+exp_mun<- get_budgetary_expenses_municipality(year = 2019,municipality = 3550308, account = "Pessoal e Encargos Sociais")
+
+head(exp_mun)
+```
+
+if you are not sure what are the government functions available you can use something like this:
+
+```{r example3}
+gov_func<- get_distinct_function()
+
+head(gov_func)
+
+```
+
