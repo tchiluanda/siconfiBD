@@ -5,7 +5,7 @@
 #' @param municipality vector with IBGE ids for municipalities
 #' @param account vector with account names
 #' @return A tibble with data about budgetary revenues
-#' @example get_budgetary_revenues_municipality(year = 2019,municipality = 3550308,account = "Impostos")
+#' @examples get_budgetary_revenues_municipality(year = 2019,municipality = 3550308,account = "Impostos")
 #' @export
 
 

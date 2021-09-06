@@ -23,3 +23,6 @@ A tibble with data about budgetary revenues
 \description{
 This function retrieves values of government functions for given municipalities.
 }
+\examples{
+get_budgetary_revenues_municipality(year = 2019,municipality = 3550308,account = "Impostos")
+}

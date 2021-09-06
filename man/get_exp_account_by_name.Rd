@@ -17,3 +17,6 @@ A vector with expense accounts
 \description{
 This function searchs budgetary expense accounts by a given name.
 }
+\examples{
+get_exp_account_by_name(name = "pessoal")
+}

@@ -4,7 +4,7 @@
 #' @param year number indicating the year or reference
 #' @param name account name that will be searched
 #' @return A vector with expense accounts
-#' @example get_exp_account_by_name(name = "pessoal")
+#' @examples get_exp_account_by_name(name = "pessoal")
 #' @export
 
 get_exp_account_by_name <- function(year=2019, name){
