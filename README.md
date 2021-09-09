@@ -93,11 +93,6 @@ head(gov_func)
 ## Credits
 
 This package uses the library {basedosdados}. 
+https://github.com/basedosdados/mais/blob/master/CITATION.cff
 
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
-authors:
-  - family-names: Base dos Dados
-url: "https://basedosdados.org"
-year-original: 2019
-year: 2021
+
