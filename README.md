@@ -89,3 +89,15 @@ head(gov_func)
 #> 5 04.122   Administração Geral               
 #> 6 08       Assistência Social
 ```
+
+## Credits
+
+This package uses the library {basedosdados}. 
+
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Base dos Dados
+url: "https://basedosdados.org"
+year-original: 2019
+year: 2021
