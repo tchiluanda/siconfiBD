@@ -89,3 +89,10 @@ head(gov_func)
 #> 5 04.122   Administração Geral               
 #> 6 08       Assistência Social
 ```
+
+## Credits
+
+This package uses the library {basedosdados}. 
+https://github.com/basedosdados/mais/blob/master/CITATION.cff
+
+
