@@ -1,10 +1,10 @@
-#' Get government functions for municipalities
+#' Get government functions expenses for municipalities
 #'
 #' This function retrieves values of govenrment functions for given municipalities.
 #' @param year vector indicating the reference year
 #' @param municipality vector with ibge municipality id
 #' @param gov_function vector with government funcions ids
-#' @param expense_stage vctor with expense stages c("Despesas Empenhadas", "Despesas Liquidadas","Despesas Pagas")
+#' @param expense_stage vector with expense stages c("Despesas Empenhadas", "Despesas Liquidadas","Despesas Pagas")
 #' @return A tibble with data about expanses on functions governments
 #' @examples get_function_expenses_municipality(year=2019, municipality = "3550308", gov_function = "saúde" )
 #' @export
