@@ -34,7 +34,7 @@ get_perc_budgetary_exp_municipality<- function(year = 2019,municipality = NULL, 
     query <- paste0(query, " and df.id_municipio in (", str_c(municipality, collapse = "," ),")")
   }
 
-  if (!is.null(gov_function)) {
+  if (!is.null(account)) {
     query <- paste0(query, " and lower(df.conta) in (",str_to_lower(  str_c("'",account,"'", collapse = "," )),")")
   }
 
