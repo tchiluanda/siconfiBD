@@ -26,6 +26,11 @@ get_perc_function_exp_municipality<- function(year = 2019,municipality = NULL, g
     query_total <- paste0(query_total, " and lower(coluna) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
+  # Usa apenas as contas totais para evitar dupla contagem
+  filtra_contas_totais<- " and length(id_conta)  =2 "
+
+  query_total <- paste0(query_total, filtra_contas_totais)
+
   query_total <- paste0(query_total, " group by a.ano, a.id_municipio, a.coluna having sum(a.valor) != 0)")
 
   query<- " select df.*, (df.valor / qt.total)*100 as perc from  `basedosdados.br_tesouro_finbra.despesas_por_funcao` df inner join query_total qt on df.ano = qt.ano and df.id_municipio = qt.id_municipio and df.coluna = qt.coluna  where 1=1 "
