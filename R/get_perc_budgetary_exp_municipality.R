@@ -27,11 +27,7 @@ get_perc_budgetary_exp_municipality<- function(year = 2019,municipality = NULL, 
   }
 
   # Usa apenas as contas totais para evitar dupla contagem
-<<<<<<< HEAD
   filtra_contas_totais<- " and id_conta is null "
-=======
-  filtra_contas_totais<- " and conta in ('Total Geral da Despesa' ) "
->>>>>>> 921ddc9a87c85e6c1acb0e2df0ccccc6bb8cf3a7
 
   query_total <- paste0(query_total, filtra_contas_totais)
 

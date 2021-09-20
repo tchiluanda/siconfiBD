@@ -27,11 +27,8 @@ get_perc_function_exp_municipality<- function(year = 2019,municipality = NULL, g
   }
 
   # Usa apenas as contas totais para evitar dupla contagem
-<<<<<<< HEAD
+
   filtra_contas_totais<- " and length(id_conta)  =2 "
-=======
-  filtra_contas_totais<- " and conta in ('Despesas Intraorçamentárias', 'Despesas Exceto Intraorçamentárias' ) "
->>>>>>> 921ddc9a87c85e6c1acb0e2df0ccccc6bb8cf3a7
 
   query_total <- paste0(query_total, filtra_contas_totais)
 
