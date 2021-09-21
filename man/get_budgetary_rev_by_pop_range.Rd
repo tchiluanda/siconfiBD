@@ -27,5 +27,5 @@ A tibble with data about budgetary expenses
 This function retrieves values of government functions for given municipalities by gdp rank.
 }
 \examples{
-get_function_rev_by_pop_range(pop_range=c(1,100), gdp_year=2018, exp_year = 2019, account = "Impostos" )
+get_budgetary_rev_by_pop_range(pop_range=c(1,100), pop_year=2018, rev_year = 2019, account = "Impostos" )
 }

@@ -11,7 +11,7 @@
 #' @export
 
 
-get_function_exp_by_gpd_range<- function(gdp_range=c(1,100), gdp_year=2018, exp_year = 2019, gov_function = NULL, expense_stage=NULL ) {
+get_function_exp_by_gdp_range<- function(gdp_range=c(1,100), gdp_year=2018, exp_year = 2019, gov_function = NULL, expense_stage=NULL ) {
 
   query<- "SELECT * FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where 1=1 "
 

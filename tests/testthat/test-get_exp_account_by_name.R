@@ -1,3 +1,4 @@
 test_that("Get budgetary expense accounts by name", {
-  get_exp_account_by_name(name = "pessoal")
+  expect_gt(NROW(get_exp_account_by_name(name = "pessoal")),0)
+
 })

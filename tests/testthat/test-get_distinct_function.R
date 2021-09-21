@@ -1,3 +1,4 @@
 test_that("Get distinct functions", {
-  get_distinct_function()
+  expect_gt(NROW(get_distinct_function()),0)
+
 })

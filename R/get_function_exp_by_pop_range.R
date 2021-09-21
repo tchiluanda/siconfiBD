@@ -7,7 +7,7 @@
 #' @param gov_function vector with government functions
 #' @param expense_stage vctor with expense stages c("Despesas Empenhadas", "Despesas Liquidadas","Despesas Pagas")
 #' @return A tibble with data about budgetary expenses
-#' @examples get_function_exp_by_pop_range(pop_range=c(1,100), gdp_year=2018, exp_year = 2019, gov_function = "saúde" )
+#' @examples get_function_exp_by_pop_range(pop_range=c(1,100), pop_year=2018, exp_year = 2019, gov_function = "saúde" )
 #' @export
 
 

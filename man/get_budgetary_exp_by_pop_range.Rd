@@ -30,5 +30,5 @@ A tibble with data about budgetary expenses
 This function retrieves values of government functions for given municipalities by gdp rank.
 }
 \examples{
-get_function_exp_by_pop_range(pop_range=c(1,100), gdp_year=2018, exp_year = 2019, account = "Pessoal e Encargos Sociais" )
+get_budgetary_exp_by_pop_range(pop_range=c(1,100), pop_year=2018, exp_year = 2019, account = "Pessoal e Encargos Sociais" )
 }
