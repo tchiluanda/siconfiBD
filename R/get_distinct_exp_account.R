@@ -8,7 +8,11 @@
 
 get_distinct_exp_account <- function(year=2019){
 
-  query<- paste("SELECT distinct id_conta, conta  FROM `basedosdados.br_tesouro_finbra.despesas_orcamentarias` where ano =  ", year)
+  query<- paste0("SELECT distinct ano, portaria, conta FROM `",pkg.env$database,".",pkg.env$tabela_despesa, "` where 1=1 ")
+
+  query <- paste0(query, " and ano in (", str_c(year, collapse = "," ),")")
+
+  #query<- paste("SELECT distinct id_conta, conta  FROM `basedosdados.br_tesouro_finbra.despesas_orcamentarias` where ano =  ", year)
 
   cat(query)
 

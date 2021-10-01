@@ -12,7 +12,7 @@
 
 get_budgetary_rev_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, rev_year = 2019, account = NULL) {
 
-  query<- "SELECT * FROM `basedosdados.br_tesouro_finbra.receitas_orcamentarias` where 1=1 "
+  query<- paste0("SELECT * FROM `",pkg.env$database,".",pkg.env$tabela_receita, "` where 1=1 ")
 
 
   if (!is.null(account)) {
@@ -27,7 +27,7 @@ get_budgetary_rev_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, rev
   query <- paste0(query, " and id_municipio in ")
 
   query_pop<-
-    paste("(SELECT cast(id_municipio as integer) FROM (SELECT id_municipio, ROW_NUMBER() OVER (ORDER BY populacao desc) R FROM basedosdados.br_ibge_populacao.municipio
+    paste("(SELECT cast(id_municipio as string) FROM (SELECT id_municipio, ROW_NUMBER() OVER (ORDER BY populacao desc) R FROM basedosdados.br_ibge_populacao.municipio
    where ano=",pop_year,") WHERE R BETWEEN", pop_range[1]," and ",pop_range[2],")")
 
   query <- paste0(query, query_pop)

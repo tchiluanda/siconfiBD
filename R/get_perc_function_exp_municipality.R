@@ -15,7 +15,7 @@ get_perc_function_exp_municipality<- function(year = 2019,municipality = NULL, g
   query_total<- "with query_total as  (select a.ano, a.id_municipio, a.coluna, sum(a.valor) as total FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` a where 1=1 "
 
   if (!is.null(municipality)) {
-    query_total <- paste0(query_total, " and id_municipio in (", str_c(municipality, collapse = "," ),")")
+    query_total <- paste0(query_total, " and id_municipio in (", stringr::str_c(municipality, collapse = "," ),")")
   }
 
   if (!is.null(year)) {
@@ -23,7 +23,7 @@ get_perc_function_exp_municipality<- function(year = 2019,municipality = NULL, g
   }
 
   if (!is.null(expense_stage)) {
-    query_total <- paste0(query_total, " and lower(coluna) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
+    query_total <- paste0(query_total, " and lower(coluna) in (", stringr::str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
   # Usa apenas as contas totais para evitar dupla contagem
@@ -37,15 +37,15 @@ get_perc_function_exp_municipality<- function(year = 2019,municipality = NULL, g
   query<- " select df.*, (df.valor / qt.total)*100 as perc from  `basedosdados.br_tesouro_finbra.despesas_por_funcao` df inner join query_total qt on df.ano = qt.ano and df.id_municipio = qt.id_municipio and df.coluna = qt.coluna  where 1=1 "
 
   if (!is.null(municipality)) {
-    query <- paste0(query, " and df.id_municipio in (", str_c(municipality, collapse = "," ),")")
+    query <- paste0(query, " and df.id_municipio in (", stringr::str_c(municipality, collapse = "," ),")")
   }
 
   if (!is.null(gov_function)) {
-    query <- paste0(query, " and lower(df.conta) in (",str_to_lower(  str_c("'",gov_function,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(df.conta) in (",stringr::str_to_lower(  str_c("'",gov_function,"'", collapse = "," )),")")
   }
 
   if (!is.null(year)) {
-    query <- paste0(query, " and df.ano in (", str_c(year, collapse = "," ),")")
+    query <- paste0(query, " and df.ano in (", stringr::str_c(year, collapse = "," ),")")
   }
 
   if (!is.null(expense_stage)) {

@@ -12,10 +12,10 @@
 
 get_function_expenses_municipality<- function(year = 2019,municipality = NULL, gov_function = NULL, expense_stage=NULL ) {
 
-  query<- "SELECT * FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where 1=1 "
+  query<- paste0("SELECT * FROM `",pkg.env$database,".",pkg.env$tabela_funcao, "` where 1=1 ")
 
   if (!is.null(municipality)) {
-    query <- paste0(query, " and id_municipio in (", str_c(municipality, collapse = "," ),")")
+    query <- paste0(query, " and cast(id_municipio as string) in (", str_c("'",municipality,"'", collapse = "," ),")")
   }
 
   if (!is.null(gov_function)) {
@@ -27,7 +27,7 @@ get_function_expenses_municipality<- function(year = 2019,municipality = NULL, g
   }
 
   if (!is.null(expense_stage)) {
-    query <- paste0(query, " and lower(coluna) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
+    query <- paste0(query, " and lower(estagio_bd) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
   cat(query)

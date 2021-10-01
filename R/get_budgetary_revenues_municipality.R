@@ -11,10 +11,10 @@
 
 get_budgetary_revenues_municipality<- function(year = 2019,municipality = NULL, account = NULL) {
 
-  query<- "SELECT * FROM `basedosdados.br_tesouro_finbra.receitas_orcamentarias` where 1=1 "
+  query<- paste0("SELECT * FROM `",pkg.env$database,".",pkg.env$tabela_receita, "` where 1=1 ")
 
   if (!is.null(municipality)) {
-    query <- paste0(query, " and id_municipio in (", str_c(municipality, collapse = "," ),")")
+    query <- paste0(query, " and cast(id_municipio as string) in (", str_c("'",municipality,"'", collapse = "," ),")")
   }
 
   if (!is.null(account)) {
