@@ -27,5 +27,5 @@ A tibble with data about budgetary expenses
 This function retrieves values of govenrment functions for given municipalities.
 }
 \examples{
-get_budgetary_expenses_municipality(year = 2019,municipality = 3550308, account = "Pessoal e Encargos Sociais")
+get_budgetary_expenses_municipality(year = 2019,municipality = 3550308, account = "Pessoal e Encargos Sociais", expense_stage= "Despesas Empenhadas")
 }

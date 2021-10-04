@@ -7,8 +7,7 @@
 get_perc_budgetary_rev_municipality(
   year = 2019,
   municipality = NULL,
-  account = NULL,
-  expense_stage = NULL
+  account = NULL
 )
 }
 \arguments{

@@ -8,7 +8,7 @@
 
 get_distinct_rev_account <- function(year=2019){
 
-  query<- paste0("SELECT distinct ano, portaria, conta FROM `",pkg.env$database,".",pkg.env$tabela_receita, "` where 1=1 ")
+  query<- paste0("SELECT distinct ano, ", pkg.env$coluna_id_siconfi,", conta FROM `",pkg.env$database,".",pkg.env$tabela_receita, "` where 1=1 ")
 
   query <- paste0(query, " and ano in (", str_c(year, collapse = "," ),")")
 

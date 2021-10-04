@@ -27,5 +27,5 @@ A tibble with data about expanses on functions governments
 This function retrieves values of govenrment functions for given municipalities.
 }
 \examples{
-get_function_expenses_municipality(year=2019, municipality = "3550308", gov_function = "saÃºde" )
+get_function_expenses_municipality(year=2019, municipality = "3550308", gov_function = "saÃºde" , expense_stage="Despesas Pagas")
 }

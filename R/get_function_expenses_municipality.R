@@ -6,7 +6,7 @@
 #' @param gov_function vector with government funcions ids
 #' @param expense_stage vector with expense stages c("Despesas Empenhadas", "Despesas Liquidadas","Despesas Pagas")
 #' @return A tibble with data about expanses on functions governments
-#' @examples get_function_expenses_municipality(year=2019, municipality = "3550308", gov_function = "saúde" )
+#' @examples get_function_expenses_municipality(year=2019, municipality = "3550308", gov_function = "saúde" , expense_stage="Despesas Pagas")
 #' @export
 
 
