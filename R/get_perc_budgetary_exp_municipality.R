@@ -55,6 +55,6 @@ get_perc_budgetary_exp_municipality<- function(year = 2019,municipality = NULL, 
   query_completa<- paste0(query_total, query)
 
   cat(query_completa)
-  basedosdados::read_sql(query_completa)
+  read_sql(query_completa)
 
 }

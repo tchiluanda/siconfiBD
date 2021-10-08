@@ -20,5 +20,5 @@ get_rev_account_by_name <- function(year=2019, name){
 
   cat(query)
 
-  basedosdados::read_sql(query)
+  read_sql(query)
 }

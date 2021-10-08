@@ -32,6 +32,6 @@ get_budgetary_expenses_municipality_state<- function(year = 2019,state = NULL, a
   }
 
   cat(query)
-  basedosdados::read_sql(query)
+  read_sql(query)
 
 }

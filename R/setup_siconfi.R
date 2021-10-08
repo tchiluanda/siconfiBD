@@ -5,11 +5,7 @@
 #' @return No return
 #' @examples setup_siconfi(<your_project_id>)
 #' @export
-
-pkg.env <- new.env()
-
-#' @export
-setup_siconfi <- function(project_id=NULL, database="basedosdados-dev.br_me_siconfi", tabela_despesa ="municipio_despesas_orcamentarias", tabela_receita="municipio_receitas_orcamentarias", tabela_funcao="municipio_despesas_funcao", coluna_estagio= "estagio_bd", coluna_id_siconfi="portaria" ){
+setup_siconfi <- function(project_id=NULL, database="basedosdados.br_me_siconfi", tabela_despesa ="municipio_despesas_orcamentarias", tabela_receita="municipio_receitas_orcamentarias", tabela_funcao="municipio_despesas_funcao", coluna_estagio= "estagio_bd", coluna_id_siconfi="portaria", page_size=10^4 ){
   basedosdados::set_billing_id(project_id)
 
 
@@ -19,5 +15,7 @@ setup_siconfi <- function(project_id=NULL, database="basedosdados-dev.br_me_sico
   pkg.env$tabela_receita<- tabela_receita
   pkg.env$coluna_estagio<- coluna_estagio
   pkg.env$coluna_id_siconfi<-coluna_id_siconfi
+  pkg.env$page_size = page_size
 
 }
+

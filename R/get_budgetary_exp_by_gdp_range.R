@@ -37,6 +37,6 @@ get_budgetary_exp_by_gdp_range<- function(gdp_range=c(1,100), gdp_year=2018, exp
   query <- paste0(query, query_gdp)
 
   cat(query)
-  basedosdados::read_sql(query)
+  read_sql(query)
 
 }

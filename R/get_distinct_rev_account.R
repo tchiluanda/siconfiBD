@@ -16,5 +16,5 @@ get_distinct_rev_account <- function(year=2019){
 
   cat(query)
 
-  basedosdados::read_sql(query)
+  read_sql(query)
 }

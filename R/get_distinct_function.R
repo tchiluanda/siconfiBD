@@ -27,6 +27,6 @@ get_distinct_function <- function(year=2019,scope="a"){
 
   cat(query)
 
-  basedosdados::read_sql(query)
+  read_sql(query)
 }
 

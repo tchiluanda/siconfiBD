@@ -27,6 +27,6 @@ get_budgetary_revenues_municipality<- function(year = 2019,municipality = NULL, 
 
 
   cat(query)
-  basedosdados::read_sql(query)
+  read_sql(query)
 
 }

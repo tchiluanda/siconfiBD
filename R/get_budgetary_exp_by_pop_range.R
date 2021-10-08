@@ -37,6 +37,6 @@ get_budgetary_exp_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, exp
   query <- paste0(query, query_pop)
 
   cat(query)
-  basedosdados::read_sql(query)
+  read_sql(query)
 
 }
