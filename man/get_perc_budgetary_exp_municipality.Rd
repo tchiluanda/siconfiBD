@@ -27,5 +27,5 @@ A tibble with data about budgetary expenses
 This function retrieves values of government functions in % for given municipalities.
 }
 \examples{
-get_perc_budgetary_exp_municipality(year=2019, municipality = "3550308", account = "Pessoal e Encargos Sociais" )
+get_perc_budgetary_exp_municipality(year=2019, municipality = "3550308", account = "Pessoal e Encargos Sociais", expense_stage= "Despesas Pagas")
 }

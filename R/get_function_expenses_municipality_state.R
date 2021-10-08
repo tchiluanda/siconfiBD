@@ -12,28 +12,29 @@
 
 get_function_expenses_municipality_state<- function(year=2019, state = NULL, gov_function = NULL, expense_stage=NULL ) {
 
-  query<- "SELECT * FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where 1=1 "
+
+  query<- paste0("SELECT * FROM `",pkg.env$database,".",pkg.env$tabela_funcao, "` where 1=1 ")
 
   if (!is.null(year)) {
-    query <- paste0(query, " and ano in (", str_c(year, collapse = "," ),")")
+    query <- paste0(query, " and ano in (", stringr::str_c(year, collapse = "," ),")")
   }
 
 
   if (!is.null(state)) {
-    query <- paste0(query, " and lower(sigla_uf) in (", str_to_lower( str_c("'",state,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(sigla_uf) in (", stringr::str_to_lower( stringr::str_c("'",state,"'", collapse = "," )),")")
   }
 
   if (!is.null(gov_function)) {
-    query <- paste0(query, " and lower(conta) in (", str_to_lower( str_c("'",gov_function,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(conta) in (", stringr::str_to_lower( stringr::str_c("'",gov_function,"'", collapse = "," )),")")
   }
 
 
   if (!is.null(expense_stage)) {
-    query <- paste0(query, " and lower(coluna) in (",str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
+    query <- paste0(query, " and lower(",pkg.env$coluna_estagio,") in (",stringr::str_to_lower( stringr::str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
   cat(query)
-  basedosdados::read_sql(query)
+  read_sql(query)
 
 
 }

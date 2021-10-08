@@ -12,17 +12,21 @@
 
 get_distinct_function <- function(year=2019,scope="a"){
 
-  query<- paste("SELECT distinct id_conta, conta  FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where ano =  ", year)
+  query<- paste0("SELECT distinct ano, ", pkg.env$coluna_id_siconfi,", conta FROM `",pkg.env$database,".",pkg.env$tabela_funcao, "` where 1=1 ")
+
+  #query<- paste("SELECT distinct id_conta, conta  FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where ano =  ", year)
+
+  query <- paste0(query, " and ano in (", stringr::str_c(year, collapse = "," ),")")
 
   if (scope == "f"){
-    query<- paste(query," and CHAR_LENGTH(id_conta) = 2")
+    query<- paste(query," and CHAR_LENGTH(",pkg.env$coluna_id_siconfi,") <= 2")
 
   } else if (scope =="s"){
-    query<- paste(query," and CHAR_LENGTH(id_conta) > 2")
+    query<- paste(query," and CHAR_LENGTH(",pkg.env$coluna_id_siconfi,") > 2")
   }
 
   cat(query)
 
-  basedosdados::read_sql(query)
+  read_sql(query)
 }
 
