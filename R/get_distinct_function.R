@@ -16,7 +16,7 @@ get_distinct_function <- function(year=2019,scope="a"){
 
   #query<- paste("SELECT distinct id_conta, conta  FROM `basedosdados.br_tesouro_finbra.despesas_por_funcao` where ano =  ", year)
 
-  query <- paste0(query, " and ano in (", str_c(year, collapse = "," ),")")
+  query <- paste0(query, " and ano in (", stringr::str_c(year, collapse = "," ),")")
 
   if (scope == "f"){
     query<- paste(query," and CHAR_LENGTH(",pkg.env$coluna_id_siconfi,") <= 2")

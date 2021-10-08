@@ -18,15 +18,15 @@ get_function_exp_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, exp_
 
 
   if (!is.null(gov_function)) {
-    query <- paste0(query, " and lower(conta) in (",str_to_lower(  str_c("'",gov_function,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(conta) in (",stringr::str_to_lower(  stringr::str_c("'",gov_function,"'", collapse = "," )),")")
   }
 
   if (!is.null(exp_year)) {
-    query <- paste0(query, " and ano in (", str_c(exp_year, collapse = "," ),")")
+    query <- paste0(query, " and ano in (", stringr::str_c(exp_year, collapse = "," ),")")
   }
 
   if (!is.null(expense_stage)) {
-    query <- paste0(query, " and lower(estagio_bd) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
+    query <- paste0(query, " and lower(estagio_bd) in (", stringr::str_to_lower( stringr::str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
   query <- paste0(query, " and id_municipio in ")

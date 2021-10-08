@@ -16,11 +16,11 @@ get_budgetary_rev_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, rev
 
 
   if (!is.null(account)) {
-    query <- paste0(query, " and lower(conta) in (",str_to_lower(  str_c("'",account,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(conta) in (",stringr::str_to_lower(  stringr::str_c("'",account,"'", collapse = "," )),")")
   }
 
   if (!is.null(rev_year)) {
-    query <- paste0(query, " and ano in (", str_c(rev_year, collapse = "," ),")")
+    query <- paste0(query, " and ano in (", stringr::str_c(rev_year, collapse = "," ),")")
   }
 
 

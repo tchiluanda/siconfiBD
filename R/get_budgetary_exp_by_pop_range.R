@@ -17,15 +17,15 @@ get_budgetary_exp_by_pop_range<- function(pop_range=c(1,100), pop_year=2018, exp
 
 
   if (!is.null(account)) {
-    query <- paste0(query, " and lower(conta) in (",str_to_lower(  str_c("'",account,"'", collapse = "," )),")")
+    query <- paste0(query, " and lower(conta) in (",stringr::str_to_lower(  stringr::str_c("'",account,"'", collapse = "," )),")")
   }
 
   if (!is.null(exp_year)) {
-    query <- paste0(query, " and ano in (", str_c(exp_year, collapse = "," ),")")
+    query <- paste0(query, " and ano in (", stringr::str_c(exp_year, collapse = "," ),")")
   }
 
   if (!is.null(expense_stage)) {
-    query <- paste0(query, " and lower(estagio_bd) in (", str_to_lower( str_c("'",expense_stage, "'", collapse = "," )),")")
+    query <- paste0(query, " and lower(estagio_bd) in (", stringr::str_to_lower( stringr::str_c("'",expense_stage, "'", collapse = "," )),")")
   }
 
   query <- paste0(query, " and id_municipio in ")
