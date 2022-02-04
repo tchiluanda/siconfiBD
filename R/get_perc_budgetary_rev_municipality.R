@@ -23,7 +23,7 @@ get_perc_budgetary_rev_municipality<- function(year = 2019,municipality = NULL, 
 
 
   # Usa apenas as contas totais para evitar dupla contagem
-  filtra_contas_totais<- paste0(" and ",pkg.env$coluna_id_siconfi ," is null ")
+  filtra_contas_totais<- paste0(" and id_conta_bd = '1.0.0.0.0.00.00.00'")
 
   query_total <- paste0(query_total, filtra_contas_totais)
 
