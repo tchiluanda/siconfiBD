@@ -9,7 +9,7 @@
 
 read_sql <- function(query,  page_size = pkg.env$page_size){
 
-  basedosdados::read_sql(query, page_size= page_size)
+  basedosdados::read_sql(query)
 
 
 }
